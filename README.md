@@ -84,3 +84,19 @@ Example:
 	*	Second way, open the Cardiovascular project in eClips IDE.
 	*	Right click in any place of the Cardiovascular application.Config file.
 	*	Click on "Run as a Java Application".
+	
+# 3. Contributors
+
+#### Principal Investigator
+
+-  Professor Sungyoung Lee (sylee@oslab.khu.ac.kr)
+-  Professor Dong-Ju Choi (djchoi@snubh.org)
+
+#### Project Lead 
+
+-  Taqdir Ali (taqdir.ali@oslab.khu.ac.kr)
+
+#### Domain Experts 
+
+-  Professor Dong-Ju Choi (djchoi@snubh.org)
+-  Professor Jin Joo Park (jinjooparkmd@gmail.com)
