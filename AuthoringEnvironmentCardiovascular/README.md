@@ -208,7 +208,7 @@ Write the main features
 
 -  Taqdir Ali (taqdir.ali@oslab.khu.ac.kr)
 
-#### Physicians 
+#### Domain Experts 
 
 -  Professor Dong-Ju Choi (djchoi@snubh.org)
 -  Professor Jin Joo Park (jinjooparkmd@gmail.com)
