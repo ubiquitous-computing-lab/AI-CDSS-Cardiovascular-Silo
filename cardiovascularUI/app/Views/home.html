@@ -1,0 +1,23 @@
+<h1>Dashborad</h1>
+
+
+<div class="padded white" md-whiteframe="1"   layout-padding  layout-align="center center" >
+
+<md-list flex  ng-controller="homeCtrl">
+ 
+    <h1>Patients</h1>
+     <a href="#/cdss"> <md-button class="md-raised md-primary">Primary</md-button></a>
+  <md-divider ></md-divider>
+  
+  <md-list-item class="md-3-line" ng-repeat="phone in phones">
+    <h3> {{ phone.number }} </h3>
+    <md-button class="md-raised md-primary"><i class="material-icons">mode_edit</i></md-button>
+    <md-button class="md-warn md-raised md-hue-2"><i class="material-icons">delete</i></md-button>
+  </md-list-item>
+</md-list>
+
+
+
+
+
+</div>

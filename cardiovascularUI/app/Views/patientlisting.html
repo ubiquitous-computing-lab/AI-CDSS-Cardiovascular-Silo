@@ -1,0 +1,70 @@
+<h1>Dashborad</h1>
+<div class="white" md-whiteframe="1"   layout-align="center center">
+  <div class="row">
+    <md-toolbar class="site-content-toolbar" >
+      <div class="md-toolbar-tools">
+
+        <h2>Patient List</h2>
+        <span flex></span>
+
+        <a href="#/patientdetail" ><md-button class="md-raised redbutton " >Add New Patient</md-button> </a>
+      </div>
+    </md-toolbar>
+    <md-divider ></md-divider>
+
+    <div layout-padding  class="contentbg" >  
+     <div layout-gt-sm="row">
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Search Patients</label>
+        <input ng-model="search">
+      </md-input-container>
+      <md-input-container class="md-block" flex-gt-sm>
+        <label>Results per page:</label>
+        <md-select ng-model="resultlimit" ng-init="resultlimit=10">
+          <md-option value="1">1</md-option>
+          <md-option value="3">3</md-option>
+          <md-option value="5">5</md-option>
+          <md-option value="10">10</md-option>
+          <md-option value="20">20</md-option>
+          <md-option value="100">100</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <table class="table  bordered">
+      <thead>
+        <tr>
+          <th width="100" ng-class="{'activetab waves-effect waves-light' : predicate == 'patientMRNNo'}" ng-click="predicate = 'patientMRNNo'; reverse=!reverse" >Patient MRNo <i ng-show="predicate == 'patientMRNNo' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'patientMRNNo' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="200" ng-class="{'activetab waves-effect waves-light' : predicate == 'patientName'}"  ng-click="predicate = 'patientName'; reverse=!reverse">Name <i ng-show="predicate == 'patientName' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'patientName' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="100" ng-class="{'activetab waves-effect waves-light' : predicate == 'age'}"  ng-click="predicate = 'age'; reverse=!reverse">Age <i ng-show="predicate == 'age' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'age' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="100" ng-class="{'activetab waves-effect waves-light' : predicate == 'gender'}"  ng-click="predicate = 'gender'; reverse=!reverse">Gender <i ng-show="predicate == 'gender' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'gender' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="100" ng-class="{'activetab waves-effect waves-light' : predicate == 'symptomsAndSigns'}"  ng-click="predicate = 'symptomsAndSigns'; reverse=!reverse">Initial Symptoms <i ng-show="predicate == 'symptomsAndSigns' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'symptomsAndSigns' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="100" ng-class="{'activetab waves-effect waves-light' : predicate == 'encounterDate'}"  ng-click="predicate = 'encounterDate'; reverse=!reverse">Encounter Date <i ng-show="predicate == 'encounterDate' && !reverse" class="material-icons right">expand_more</i> <i ng-show="predicate == 'encounterDate' && reverse" class="material-icons right">expand_less</i> </th>
+          <th width="200" class="text-align-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr dir-paginate="patient in patients | filter:search | filter:filters | orderBy:predicate:reverse | itemsPerPage: resultlimit ">
+          <td>{{ patient.patientMRNNo }}</td>
+          <td>{{ patient.patientName }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.gender }}</td>
+          <td>{{ patient.symptomsAndSigns == 1 ? 'Yes' : 'No'  }}</td>
+          <td>{{ patient.encounterDate }}</td>
+          <td>
+           <md-button class="md-raised md-primary" ng-click="redirectToURL('/patientdetail/'+patient.patientID)"><i class="material-icons">mode_edit</i></md-button>
+           <md-button class="md-warn md-raised md-hue-2 redbutton " ng-click="deletePatient(patient.patientID, patient.patientMRNNo)"><i class="material-icons">delete</i></md-button>
+
+         </td>
+       </tr>
+       <tr>
+          <td colspan="7" ng-hide="patients.length" style="text-align: center;" > No Patient Found</td>
+       </tr>
+     </tbody>
+   </table>
+   <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" style="text-align: center;"></dir-pagination-controls>
+ </div>
+ <!-- end row --> 
+</div>
+</div>
+<!-- end container --> 
+
