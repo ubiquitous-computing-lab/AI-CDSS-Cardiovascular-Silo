@@ -92,11 +92,11 @@ Example:
 -  Professor Sungyoung Lee (sylee@oslab.khu.ac.kr)
 -  Professor Dong-Ju Choi (djchoi@snubh.org)
 
-#### Project Lead 
+#### Technical Lead 
 
 -  Taqdir Ali (taqdir.ali@oslab.khu.ac.kr)
 
-#### Domain Experts 
+#### Domain Experts (Physicians)
 
 -  Professor Dong-Ju Choi (djchoi@snubh.org)
 -  Professor Jin Joo Park (jinjooparkmd@gmail.com)
