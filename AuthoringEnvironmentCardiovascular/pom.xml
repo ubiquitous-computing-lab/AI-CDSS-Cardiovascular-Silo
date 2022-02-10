@@ -10,7 +10,7 @@
 		<org.springframework-version>4.1.5.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.7.4</org.aspectj-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
-		<hibernate.version>4.3.5.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<jackson.databind-version>2.2.3</jackson.databind-version>
 	</properties>
 	<name>AuthoringEnvironmentCardiovascular Maven Webapp</name>
